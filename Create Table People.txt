@@ -1,0 +1,17 @@
+CREATE TABLE [People]
+(
+[Id] BIGINT PRIMARY KEY IDENTITY ,
+[Name] VARCHAR(30) UNIQUE NOT NULL,
+[Picture] VARBINARY(MAX),
+[Height] float(2),
+[Weight] FLOAT(2),
+[Gender] CHAR (2) NOT NULL CONSTRAINT one_letter CHECK ([Gender] IN ('f','m')) ,
+[Birthdate] DATE NOT NULL,
+[Biography] NVARCHAR(MAX)
+)
+INSERT INTO People ([Name],Gender,Birthdate) VALUES
+('GOSHO', 'f', GETDATE()),
+('GOSHO2', 'f', GETDATE()),
+('GOSHO3', 'f', GETDATE()),
+('GOSHO4', 'f', GETDATE()),
+('GOSHO5', 'f', GETDATE())
