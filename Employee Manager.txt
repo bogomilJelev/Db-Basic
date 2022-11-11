@@ -1,0 +1,3 @@
+select e.EmployeeID,e.FirstName,e.ManagerID,m.FirstName from Employees as e
+left join Employees as m on e.ManagerID=m.EmployeeID
+where e.ManagerID in (3,7)

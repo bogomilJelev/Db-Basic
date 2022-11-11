@@ -1,0 +1,4 @@
+select top(5) e.EmployeeID,e.JobTitle,e.AddressID,a.AddressText from Employees as e
+left join Addresses as a
+on (e.AddressID)=a.AddressID
+order by AddressID
