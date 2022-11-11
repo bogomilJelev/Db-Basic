@@ -1,0 +1,5 @@
+select e.FirstName,e.LastName,e.HireDate,d.Name from Employees as e 
+left join Departments as d on e.DepartmentID = d.DepartmentID
+where e.HireDate>'1999-1-1' and d.Name in('Sales','finance')
+order by HireDate
+
