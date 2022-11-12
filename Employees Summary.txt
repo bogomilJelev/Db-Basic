@@ -1,0 +1,4 @@
+select top (50) e.EmployeeID,e.FirstName+ ' '+ e.LastName as EmployeeName, m.FirstName + ' ' + m.LastName as ManagerName , d.Name from Employees as e
+left join Employees as m on e.ManagerID=m.EmployeeID
+left join Departments as d on e.DepartmentID = d.DepartmentID
+order by e.EmployeeID

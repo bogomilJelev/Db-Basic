@@ -1,0 +1,1 @@
+select top(5)e.FirstName,e.LastName from Employees as e order by Salary desc
