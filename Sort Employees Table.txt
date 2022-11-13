@@ -1,0 +1,1 @@
+select * from Employees as e order by Salary desc,FirstName,LastName desc,MiddleName

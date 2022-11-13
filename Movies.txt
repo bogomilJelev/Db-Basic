@@ -1,0 +1,63 @@
+CREATE TABLE [Directors]
+(
+[ID] INT PRIMARY KEY IDENTITY,
+[DirectorName] NVARCHAR (50) NOT NULL,
+[Notes] NVARCHAR (MAX)
+)
+CREATE TABLE [Genres]
+(
+[ID] INT PRIMARY KEY IDENTITY,
+[GenreName] NVARCHAR (50) NOT NULL,
+[Notes] NVARCHAR (MAX)
+)
+CREATE TABLE [Categories]
+(
+ID INT PRIMARY KEY IDENTITY,
+[CategoriesName] NVARCHAR (50) NOT NULL,
+[Notes] NVARCHAR (MAX)
+)
+
+CREATE TABLE [Movies]
+(
+[ID] INT PRIMARY KEY IDENTITY,
+[Title] NVARCHAR(100) NOT NULL,
+[DirectorId] INT FOREIGN KEY REFERENCES Directors(ID),
+[CopyrightYear] DATETIME2 NOT NULL,
+[Length] TIME NOT NULL ,
+[GenreId] INT FOREIGN KEY REFERENCES Genres(ID),
+[CategoryId] INT FOREIGN KEY REFERENCES Categories(ID),
+[Rating] TINYINT,
+[Notes] NVARCHAR (MAX)
+)
+
+
+
+
+
+
+insert into Directors([DirectorName],Notes)
+values ('Georgi','georgiNote'),
+('Maria','mariaNote'),
+('Ivan','ivanNote'),
+('Pesho','peshoNote'),
+('Marin','marinNote')
+
+insert into Genres([GenreName],Notes)
+values ('Trailer','georgiNote'),
+('Horror','mariaNote'),
+('Action','ivanNote'),
+('Comedy','peshoNote'),
+('Anime','marinNote')
+
+insert into Categories([CategoriesName],Notes)
+values ('Teen','georgiNote'),
+('Creampie','mariaNote'),
+('Blowjob','ivanNote'),
+('Pronebone','peshoNote'),
+('BBC','marinNote')
+
+
+insert into Movies([Title],[DirectorId],[CopyrightYear],[Length],[GenreId],[CategoryId],[Rating],[Notes])
+values ('War1',1,'01.02.2005','01:30:33',1,1,'5','Awesome'),
+('War2',2,'02.02.2005','01:10:33',2,2,'2','Awesome'),
+('War3',5,'03.02.2005','01:20:33',5,5,'1','Awesome'),

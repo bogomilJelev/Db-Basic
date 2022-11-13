@@ -1,0 +1,4 @@
+select e.EmployeeID,e.FirstName, e.LastName, d.Name from Employees as e
+left join Departments as d on e.DepartmentID=d.DepartmentID
+where d.Name='sales'
+order by EmployeeID
