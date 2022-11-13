@@ -1,0 +1,4 @@
+select p.FirstName + ' '+ p.LastName as [Full Name],f.Origin,f.Destination from Passengers as p 
+join Tickets as t on p.Id = t.PassengerId
+join Flights as f on t.FlightId = f.Id
+order by [Full Name],Origin,Destination

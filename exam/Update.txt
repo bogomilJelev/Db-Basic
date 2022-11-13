@@ -1,0 +1,2 @@
+update Tickets set price =Price*1.13
+where FlightId = (select id from Flights where Destination ='Carlsbad' )

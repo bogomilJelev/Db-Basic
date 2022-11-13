@@ -1,0 +1,2 @@
+delete tickets where FlightId in (select id from Flights where Destination='Ayn Halagim')
+delete Flights where Destination='Ayn Halagim'

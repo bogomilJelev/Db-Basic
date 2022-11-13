@@ -1,0 +1,48 @@
+create table Planes
+(Id int primary key identity,
+[Name] varchar(30) not null,
+Seats int not null,
+[Range] int not null
+);
+
+create table Flights
+(
+Id int primary key identity,
+DepartureTime datetime,
+ArrivalTime datetime,
+Origin varchar(50) not null,
+Destination varchar(50) not null,
+PlaneId int foreign key references planes(Id) not null
+);
+
+create table Passengers
+(
+Id int primary key identity,
+FirstName varchar(30) not null,
+LastName varchar(30) not null,
+Age int not null,
+[Address] varchar(30) not null,
+PassportId char(11) not null
+);
+
+create table LuggageTypes
+(
+Id int primary key identity,
+[Type] varchar (30) not null
+);
+
+create table Luggages
+(
+Id int primary key identity,
+LuggageTypeId int  foreign key references LuggageTypes(Id) not null,
+PassengerId int  foreign key references Passengers(Id) not null
+);
+
+create table Tickets
+(
+Id int primary key identity,
+PassengerId int foreign key references Passengers(Id) not null,
+FlightId int foreign key references Flights(Id) not null,
+LuggageId int foreign key references Luggages(Id) not null,
+Price decimal(15,2) not null
+);

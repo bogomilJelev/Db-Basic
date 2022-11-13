@@ -1,0 +1,4 @@
+select FirstName,LastName,Age from Passengers as p
+left join Tickets as t on t.PassengerId = p.Id
+where t.PassengerId is null
+order by Age desc ,FirstName,LastName

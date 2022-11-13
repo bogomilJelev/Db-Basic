@@ -1,0 +1,3 @@
+select FlightId , sum(Price) as Price from tickets
+group by FlightId
+order by sum(Price)desc ,FlightId

@@ -1,0 +1,8 @@
+select p.FirstName +' '+p.LastName as [Full Name], pl.[Name] as [Plane Name],Origin+' - '+Destination as [Trip],lt.[Type] as [Luggage Type] from Tickets as t
+join Passengers as p on t.PassengerId = p.Id
+join Luggages as l on t.LuggageId=l.Id
+join LuggageTypes as lt on l.LuggageTypeId = lt.Id
+join Flights as f on t.FlightId=f.Id
+join Planes as pl on f.PlaneId=pl.Id
+order by [Full Name],pl.[Name],Origin,Destination,lt.[Type]
+
